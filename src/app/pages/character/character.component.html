@@ -1,0 +1,14 @@
+<section>
+    <!-- <form [formControl]="form" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Nombre" formControlName="name">
+    </form> -->
+    <article style="color: white">
+        <h1>Character Component</h1>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <div *ngFor="let character of characters">
+                <p>{{character.name}}</p>
+                <img src="{{character.image}}" alt="">
+            </div>
+        </div>
+    </article>
+</section>
