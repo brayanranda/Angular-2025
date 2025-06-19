@@ -17,8 +17,11 @@ export class CharactersService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<Character[]> {
-    return this.http.get<CharactersResponse>(this.apiUrl).pipe(
+  getCharacters(page: number, name?: string): Observable<Character[]> {
+    const nameQuery = name ? `&name=${name}` : '';
+    const fullUrl = `${this.apiUrl}?page=${page}${nameQuery}`;
+
+    return this.http.get<CharactersResponse>(fullUrl).pipe(
       map(response => response.results)
     );
   }

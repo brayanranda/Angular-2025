@@ -1,13 +1,22 @@
-<section>
-    <!-- <form [formControl]="form" (ngSubmit)="onSubmit()">
-        <input type="text" placeholder="Nombre" formControlName="name">
-    </form> -->
+<section style="width: 70%; margin: 0 auto">
     <article style="color: white">
-        <h1>Character Component</h1>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+        <div style="display: flex; gap: 20px; align-items: center; justify-content: space-between; width: 100%;">
+            <h1>List of Characters | API Rick and Morty</h1>
+            <div style="display: flex; gap: 5px">
+                <button (click)="form.reset(); loadedCharacters()">x</button>
+                <form [formGroup]="form" (ngSubmit)="handleSearch()">
+                    <input type="text" formControlName="name" placeholder="Search by name">
+                    <button type="submit">Buscar</button>
+                </form>
+                <div style="margin-left: 20px">
+                    <button (click)="handlePreviousPage()" [disabled]="page <= 1">Back</button>
+                    <button (click)="handleNextPage()">Next</button>
+                </div>
+            </div>
+        </div>
+        <div style="display: grid; gap: 50px; grid-template-columns: repeat(3, 1fr);">
             <div *ngFor="let character of characters">
-                <p>{{character.name}}</p>
-                <img src="{{character.image}}" alt="">
+                <app-card-character [character]="character"></app-card-character>
             </div>
         </div>
     </article>
