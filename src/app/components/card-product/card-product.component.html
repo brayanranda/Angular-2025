@@ -1,0 +1,8 @@
+<div style="width: 100%;">
+    <p style="font-size: 25px; font-weight: bold;">{{product.title}}</p>
+    <img src="{{product.images[0]}}" style="width: 100%;" alt="">
+    <div style="display: flex; justify-content: space-between;">
+        <button style="font-size: 20px; cursor: pointer" disabled="true">Update</button>
+        <button style="font-size: 20px; cursor: pointer" (click)="handleDelete()">Delete</button>
+    </div>
+</div>
