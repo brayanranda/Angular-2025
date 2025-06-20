@@ -55,6 +55,14 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -67,6 +75,9 @@
             },
             "development": {
               "buildTarget": "testProject:build:development"
+            },
+            "staging": {
+              "buildTarget": "testProject:build:staging"
             }
           },
           "defaultConfiguration": "development"
