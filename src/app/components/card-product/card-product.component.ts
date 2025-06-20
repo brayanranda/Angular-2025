@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../models/Product.model';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-card-product',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './card-product.component.html',
   styleUrl: './card-product.component.css'
 })

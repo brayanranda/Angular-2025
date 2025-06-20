@@ -1,8 +1,15 @@
 <div style="width: 100%;">
     <p style="font-size: 25px; font-weight: bold;">{{product.title}}</p>
-    <img src="{{product.images[0]}}" style="width: 100%;" alt="">
+    <div style="width: 100%; position: relative; height: 300px;">
+        <img 
+            [fill]="true"
+            [ngSrc]="product.images[0]"
+            alt="image product"
+            class="image-product"
+        >
+    </div>
     <div style="display: flex; justify-content: space-between;">
-        <button style="font-size: 20px; cursor: pointer" disabled="true">Update</button>
-        <button style="font-size: 20px; cursor: pointer" (click)="handleDelete()">Delete</button>
+        <button disabled="true">Update</button>
+        <button (click)="handleDelete()" class="btn-danger">Delete</button>
     </div>
 </div>
